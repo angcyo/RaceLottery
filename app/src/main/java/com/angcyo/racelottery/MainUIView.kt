@@ -2,7 +2,7 @@ package com.angcyo.racelottery
 
 import com.angcyo.racelottery.iview.HallUIView
 import com.angcyo.racelottery.iview.LotteryUIView
-import com.angcyo.racelottery.iview.MeUIView
+import com.angcyo.racelottery.iview.login.LoginUIView
 import com.angcyo.uiview.base.UINavigationView
 
 /**
@@ -20,6 +20,6 @@ class MainUIView : UINavigationView() {
     override fun createPages(pages: ArrayList<PageBean>) {
         pages.add(PageBean(HallUIView(), "", null, null, null, R.drawable.tab_hall_normal, R.drawable.tab_hall_pressed))
         pages.add(PageBean(LotteryUIView(), "", null, null, null, R.drawable.tab_award_normal, R.drawable.tab_award_pressed))
-        pages.add(PageBean(MeUIView(), "", null, null, null, R.drawable.tab_mine_normal, R.drawable.tab_mine_pressed))
+        pages.add(PageBean(LoginUIView(), "", null, null, null, R.drawable.tab_mine_normal, R.drawable.tab_mine_pressed))
     }
 }

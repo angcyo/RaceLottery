@@ -98,8 +98,15 @@ class HallUIView : UIRecyclerUIView<String, HallBean, String>() {
             override fun onBindDataView(holder: RBaseViewHolder, posInData: Int, dataBean: HallBean) {
                 super.onBindDataView(holder, posInData, dataBean)
                 when (posInData) {
-                    0 -> holder.imgV(R.id.image_view).setImageResource(R.drawable.tab_login_icon)
-                    1 -> holder.imgV(R.id.image_view).setImageResource(R.drawable.cs50_logo)
+                    0 -> {
+                        holder.imgV(R.id.image_view).setImageResource(R.drawable.tab_login_icon)
+                        holder.itemView.setOnClickListener { mParentILayout.startIView(X5WebUIView(LotteryApp.URL)) }
+                    }
+
+                    1 -> {
+                        holder.imgV(R.id.image_view).setImageResource(R.drawable.cs50_logo)
+                        holder.itemView.setOnClickListener { mParentILayout.startIView(X5WebUIView(LotteryApp.URL)) }
+                    }
                     else -> {
                         holder.tv(R.id.text_view1).text = dataBean.title1
                         holder.tv(R.id.text_view2).text = dataBean.title2

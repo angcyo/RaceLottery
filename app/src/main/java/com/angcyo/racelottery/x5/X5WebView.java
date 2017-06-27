@@ -179,32 +179,30 @@ public class X5WebView extends WebView implements IWebView {
 //            // TODO Auto-generated method stub
 //            if (X5WebView.isSmallWebViewDisplayed == true) {
 //
-//                WebView.WebViewTransport webViewTransport = (WebView.WebViewTransport) msg.obj;
-//                WebView webView = new WebView(X5WebView.this.getContext()) {
+//            WebView.WebViewTransport webViewTransport = (WebView.WebViewTransport) msg.obj;
+//            WebView webView = new WebView(X5WebView.this.getContext()) {
 //
-//                    protected void onDraw(Canvas canvas) {
-//                        super.onDraw(canvas);
-//                        Paint paint = new Paint();
-//                        paint.setColor(Color.GREEN);
-//                        paint.setTextSize(15);
-//                        canvas.drawText("新建窗口", 10, 10, paint);
-//                    }
+//                protected void onDraw(Canvas canvas) {
+//                    super.onDraw(canvas);
+//                    Paint paint = new Paint();
+//                    paint.setColor(Color.GREEN);
+//                    paint.setTextSize(15);
+//                    canvas.drawText("新建窗口", 10, 10, paint);
+//                }
+//            };
+//            webView.setWebViewClient(new WebViewClient() {
+//                public boolean shouldOverrideUrlLoading(WebView arg0, String arg1) {
+//                    arg0.loadUrl(arg1);
+//                    return true;
+//                }
 //
-//                    ;
-//                };
-//                webView.setWebViewClient(new WebViewClient() {
-//                    public boolean shouldOverrideUrlLoading(WebView arg0, String arg1) {
-//                        arg0.loadUrl(arg1);
-//                        return true;
-//                    }
-//
-//                    ;
-//                });
-//                LayoutParams lp = new LayoutParams(400, 600);
-//                lp.gravity = Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL;
-//                X5WebView.this.addView(webView, lp);
-//                webViewTransport.setWebView(webView);
-//                msg.sendToTarget();
+//                ;
+//            });
+//            LayoutParams lp = new LayoutParams(400, 600);
+//            lp.gravity = Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL;
+//            X5WebView.this.addView(webView, lp);
+//            webViewTransport.setWebView(webView);
+//            msg.sendToTarget();
 //            }
 //            return true;
             return super.onCreateWindow(arg0, arg1, arg2, msg);
@@ -340,7 +338,7 @@ public class X5WebView extends WebView implements IWebView {
         webSetting.setSupportZoom(true);
         webSetting.setBuiltInZoomControls(true);
         webSetting.setUseWideViewPort(true);
-        webSetting.setSupportMultipleWindows(true);
+        webSetting.setSupportMultipleWindows(false);//支持多窗口模式, 如果为false,那么onCreateWindow方法不会回调
         //webSetting.setLoadWithOverviewMode(true);
         webSetting.setAppCacheEnabled(true);
         //webSetting.setDatabaseEnabled(true);

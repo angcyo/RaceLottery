@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:paddingEnd="@dimen/base_xhdpi"
+        android:paddingStart="@dimen/base_xhdpi">
+
+        <include
+            android:id="@+id/user_name_layout"
+            layout="@layout/item_single_input_layout"/>
+
+        <include
+            android:id="@+id/user_password_layout"
+            layout="@layout/item_single_input_layout"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/base_xhdpi"
+            android:orientation="horizontal">
+
+            <com.angcyo.uiview.widget.RTextView
+                android:id="@+id/register_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/base_bg_selector"
+                android:clickable="true"
+                android:paddingBottom="@dimen/base_hdpi"
+                android:paddingTop="@dimen/base_hdpi"
+                android:text="快速注册"/>
+
+            <Space
+                android:layout_width="@dimen/base_0dpi"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+            <com.angcyo.uiview.widget.RTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/base_bg_selector"
+                android:clickable="true"
+                android:paddingBottom="@dimen/base_hdpi"
+                android:paddingTop="@dimen/base_hdpi"
+                android:text="忘记密码"/>
+
+        </LinearLayout>
+
+        <com.angcyo.uiview.widget.Button
+            android:id="@+id/login_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/base_xhdpi"
+            android:text="登录"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
