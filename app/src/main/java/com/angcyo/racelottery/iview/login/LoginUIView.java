@@ -26,16 +26,15 @@ import java.util.List;
  * Version: 1.0.0
  */
 public class LoginUIView extends BaseItemUIView {
-//    @Override
-//    protected TitleBarPattern getTitleBar() {
-//        return super.getTitleBar().setTitleString("登录").setShowBackImageView(true);
-//    }
-
-
     @Override
     protected TitleBarPattern getTitleBar() {
-        return null;
+        return super.getTitleBar().setTitleString("登录").setShowBackImageView(false);
     }
+
+//    @Override
+//    protected TitleBarPattern getTitleBar() {
+//        return null;
+//    }
 
     @Override
     protected int getItemLayoutId(int viewType) {
@@ -66,6 +65,13 @@ public class LoginUIView extends BaseItemUIView {
                         if (!userName.checkEmpty(true) && !userPassword.checkMinLength(6)) {
                             login(userName.string(), userPassword.string());
                         }
+                    }
+                });
+
+                holder.v(R.id.register_view).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        mParentILayout.startIView(new RegisterUIView().setEnableClipMode(ClipMode.CLIP_BOTH, v));
                     }
                 });
             }
