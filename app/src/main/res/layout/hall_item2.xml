@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:orientation="vertical">
+
+    <com.angcyo.uiview.widget.RTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/base_ldpi"
+        android:layout_marginStart="@dimen/base_xhdpi"
+        android:layout_marginTop="@dimen/base_ldpi"
+        android:paddingStart="@dimen/base_xhdpi"
+        android:text="猜你喜欢"
+        app:r_left_color="@color/base_dark_red"
+        app:r_left_margin="@dimen/base_xhdpi"
+        app:r_left_width="@dimen/base_mdpi"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/base_line"
+        android:background="@color/base_chat_bg_color"/>
+
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scaleType="fitXY"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/base_xhdpi"
+        android:background="@color/base_chat_bg_color"/>
+</LinearLayout>
