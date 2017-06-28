@@ -103,17 +103,15 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile project(':RLibrary:uiview')
     //compile project(':RLibrary:imagepicker')
-
     //compile 'com.android.support.constraint:constraint-layout:1.0.2'
     //annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-
     //FPS显示库 https://github.com/wasabeef/Takt
     compile 'jp.wasabeef:takt:1.0.4'
-
     //性能检测库 https://github.com/markzhai/AndroidPerformanceMonitor
     _devCompile 'com.github.markzhai:blockcanary-android:1.5.0'
     preCompile 'com.github.markzhai:blockcanary-android:1.5.0'
+    compile project(':jpush')
 }
 repositories {
     mavenCentral()

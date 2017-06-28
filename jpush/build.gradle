@@ -1,0 +1,40 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion Integer.parseInt(rootProject.C_SDK)
+    buildToolsVersion rootProject.B_TOOLS
+
+    defaultConfig {
+        minSdkVersion Integer.parseInt(rootProject.M_SDK)
+        targetSdkVersion Integer.parseInt(rootProject.T_SDK)
+        versionCode 1
+        versionName "1.0"
+
+        manifestPlaceholders = [
+                /*极光APP_KEY*/
+                JPUSH_APPKEY : "efea60c1488bea81882c4c9d",
+                /*需要使用库的工程包名*/
+                PROJECT_NAME : "com.angcyo.racelottery",
+                /*渠道名称*/
+                JPUSH_CHANNEL: "angcyo_dev"
+        ]
+
+        //3.0.6
+        //请记得调用JPush.init(), 初始化!
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+}

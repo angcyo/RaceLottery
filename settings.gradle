@@ -1,2 +1,2 @@
-include ':app'
+include ':app', ':jpush'
 include ':RLibrary:uiview', ':RLibrary:library', ':RLibrary:rcode'

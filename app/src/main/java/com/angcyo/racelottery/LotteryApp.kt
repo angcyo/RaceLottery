@@ -1,5 +1,8 @@
 package com.angcyo.racelottery
 
+import android.content.Intent
+import com.angcyo.jpush.JPush
+import com.angcyo.jpush.JPushReceiver
 import com.angcyo.uiview.RApplication
 import com.angcyo.uiview.Root
 import com.angcyo.uiview.skin.SkinHelper
@@ -26,5 +29,17 @@ class LotteryApp : RApplication() {
         SkinHelper.init(MainSkin(applicationContext))
 
         Root.APP_FOLDER = "RaceLottery"
+
+        JPush.init(this, BuildConfig.DEBUG)
+        JPush.setAlias(getIMEI(), null)
+
+        JPushReceiver.JPushReceiveCallback = JPushReceiver.JPushReceiveCallback { context, intent ->
+            if ("cn.jpush.android.intent.NOTIFICATION_OPENED".equals(intent.action, ignoreCase = true)) {
+                val intent1 = Intent(context, MainActivity::class.java)
+                intent1.putExtra("jump", true)
+                intent1.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                context.startActivity(intent1)
+            }
+        }
     }
 }

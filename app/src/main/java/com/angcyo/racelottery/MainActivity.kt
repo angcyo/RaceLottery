@@ -2,6 +2,7 @@ package com.angcyo.racelottery
 
 import android.content.Intent
 import com.angcyo.racelottery.iview.LauncherUIView
+import com.angcyo.racelottery.x5.X5WebUIView
 import com.angcyo.uiview.base.UIBaseView
 import com.angcyo.uiview.base.UILauncherView
 import com.angcyo.uiview.base.UILayoutActivity
@@ -25,6 +26,15 @@ class MainActivity : UILayoutActivity() {
 
         UILauncherView.checkNeedShow(this) {
             startIView(LauncherUIView().setEnableClipMode(UIBaseView.ClipMode.CLIP_START))
+        }
+    }
+
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+        if (intent != null) {
+            if (intent.getBooleanExtra("jump", false)) {
+                startIView(X5WebUIView(LotteryApp.URL))
+            }
         }
     }
 }
